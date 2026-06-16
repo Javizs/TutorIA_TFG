@@ -1,0 +1,34 @@
+"use client";
+import { useSession, signOut } from "next-auth/react";
+
+function ProfilePage() {
+  const { data: session, status } = useSession();
+
+  return (
+    <div className="h-[calc(100vh-4rem)] flex flex-col gap-y-10 items-center justify-center">
+      <h1 className="font-bold text-3xl text-primary">Profile</h1>
+
+      <pre className="bg-surface border border-border text-text p-4">
+        {JSON.stringify(
+          {
+            session,
+            status,
+          },
+          null,
+          2
+        )}
+      </pre>
+
+      <button
+        className="bg-primary text-background px-4 py-2 block mb-2 hover:bg-primary-dark transition-colors"
+        onClick={() => {
+          signOut();
+        }}
+      >
+        Signout
+      </button>
+    </div>
+  );
+}
+
+export default ProfilePage;
