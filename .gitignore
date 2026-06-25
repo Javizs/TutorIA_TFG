@@ -13,8 +13,8 @@ coverage/
 out/
 
 # production
-dist/
 build/
+dist/
 
 # misc
 .DS_Store
@@ -29,6 +29,8 @@ Thumbs.db
 *.backup
 *.tmp
 *.temp
+*.swp
+*.swo
 
 # debug
 npm-debug.log*
@@ -46,9 +48,13 @@ logs/
 .env*.local
 !.env.example
 
+# editor / IDE
+.vscode/
+.idea/
+*.code-workspace
+
 # vercel
 .vercel/
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
